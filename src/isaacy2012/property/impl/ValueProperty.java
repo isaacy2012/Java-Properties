@@ -5,8 +5,8 @@ import isaacy2012.property.Property;
 import java.util.function.Function;
 
 public class ValueProperty<T> implements Property<T> {
-    T value;
-    Function<T, T> getter;
+    private final T value;
+    private final Function<T, T> getter;
 
 
     /**
