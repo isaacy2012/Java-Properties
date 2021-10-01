@@ -5,8 +5,8 @@ import isaacy2012.property.MutableProperty;
 import java.util.function.Function;
 
 public class MutableValuePropertyBuilderWithSetter<T> {
-    MutableValuePropertyBuilder<T> builder;
-    Function<T, T> setter;
+    private final MutableValuePropertyBuilder<T> builder;
+    private final Function<T, T> setter;
 
     /**
      * Instantiates a new Mutable value property builder.
