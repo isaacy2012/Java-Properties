@@ -1,0 +1,40 @@
+package isaacy2012.property.impl;
+
+import isaacy2012.property.MutableProperty;
+
+import java.util.function.Consumer;
+
+/**
+ * The type Delegate property builder.
+ *
+ * @param <T> the type parameter
+ */
+public class MutableDelegatePropertyBuilderWithSetter<T> {
+    MutableDelegatePropertyBuilder<T> builder;
+    /**
+     * The Getter.
+     */
+    Consumer<T> setter;
+
+    /**
+     * Instantiates a new Delegate property builder.
+     *
+     * @param getter the getter
+     */
+    public MutableDelegatePropertyBuilderWithSetter(MutableDelegatePropertyBuilder<T> builder,
+                                                    Consumer<T> setter) {
+
+        this.builder = builder;
+        this.setter = setter;
+    }
+
+
+    /**
+     * Build property.
+     *
+     * @return the property
+     */
+    public MutableProperty<T> build() {
+        return new MutableDelegateProperty<>(builder.getter, setter);
+    }
+}
