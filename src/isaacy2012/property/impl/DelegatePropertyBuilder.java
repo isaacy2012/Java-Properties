@@ -14,7 +14,7 @@ public class DelegatePropertyBuilder<T> {
     /**
      * The Getter.
      */
-    Supplier<T> getter;
+    private final Supplier<T> getter;
 
     /**
      * Instantiates a new Delegate property builder.

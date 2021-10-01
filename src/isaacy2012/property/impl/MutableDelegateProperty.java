@@ -16,7 +16,7 @@ public class MutableDelegateProperty<T> extends DelegateProperty<T> implements M
     /**
      * The Setter.
      */
-    Consumer<T> setter;
+    private final Consumer<T> setter;
 
     /**
      * Instantiates a new Mutable delegate property.

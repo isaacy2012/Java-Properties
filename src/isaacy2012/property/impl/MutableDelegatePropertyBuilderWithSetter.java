@@ -10,7 +10,7 @@ import java.util.function.Consumer;
  * @param <T> the type parameter
  */
 public class MutableDelegatePropertyBuilderWithSetter<T> {
-    MutableDelegatePropertyBuilder<T> builder;
+    private final MutableDelegatePropertyBuilder<T> builder;
     /**
      * The Getter.
      */
@@ -19,7 +19,8 @@ public class MutableDelegatePropertyBuilderWithSetter<T> {
     /**
      * Instantiates a new Delegate property builder.
      *
-     * @param getter the getter
+     * @param builder the builder
+     * @param setter  the setter
      */
     public MutableDelegatePropertyBuilderWithSetter(MutableDelegatePropertyBuilder<T> builder,
                                                     Consumer<T> setter) {

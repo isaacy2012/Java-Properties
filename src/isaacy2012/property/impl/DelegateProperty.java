@@ -5,7 +5,7 @@ import isaacy2012.property.Property;
 import java.util.function.Supplier;
 
 public class DelegateProperty<T> implements Property<T> {
-    Supplier<T> getter;
+    private final Supplier<T> getter;
 
 
     /**
