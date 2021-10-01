@@ -23,8 +23,7 @@ public class PersonAge {
      * @param birthYear the birth year
      */
     public PersonAge(int birthYear) {
-        this.birthYear = MutableProperty.of(birthYear)
-                .build();
+        this.birthYear = MutableProperty.of(birthYear);
 
         this.age = MutableProperty
                 .withGetter(() -> Year.now().getValue() - this.birthYear.get())

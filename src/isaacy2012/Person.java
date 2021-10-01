@@ -22,22 +22,20 @@ public class Person {
      * @param greeting  the greeting
      */
     public Person(String firstName, String lastName, int birthYear, String greeting) {
-        this.name = Property.of(firstName)
-                .build();
+        this.name = Property.of(firstName);
 
-        this.lastName = Property.of(lastName)
+        this.lastName = Property.withValue(lastName)
                 .withGetter((value) -> value != null ? value : "defaultLastName")
                 .build();
 
-        this.birthYear = MutableProperty.of(birthYear)
-                .build();
+        this.birthYear = MutableProperty.of(birthYear);
 
         this.age = MutableProperty
                 .withGetter(() -> Year.now().getValue() - this.birthYear.get())
                 .withSetter((newValue) -> this.birthYear.set(Year.now().getValue() - newValue))
                 .build();
 
-        this.greeting = MutableProperty.of(greeting)
+        this.greeting = MutableProperty.withValue(greeting)
                 .withGetter(String::toUpperCase)
                 .withSetter((newValue) -> {
                     if (newValue.length() != 0) {

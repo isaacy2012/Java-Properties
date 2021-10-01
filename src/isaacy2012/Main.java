@@ -7,7 +7,16 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+        carDemo();
         ageDemo();
+        personDemo();
+    }
+
+    private static void carDemo() {
+        Car car = new Car("ferrari", 480);
+        System.out.println(car);
+        car.doStuff();
+        System.out.println(car);
     }
 
     private static void ageDemo() {
