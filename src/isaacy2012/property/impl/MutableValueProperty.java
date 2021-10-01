@@ -14,7 +14,7 @@ public class MutableValueProperty<T> extends ValueProperty<T> implements Mutable
      * @param getter the getter
      * @param setter the setter
      */
-    public MutableValueProperty(T value, Function<T, T> getter, Function<T, T> setter) {
+    MutableValueProperty(T value, Function<T, T> getter, Function<T, T> setter) {
         super(value, getter);
         this.setter = setter;
     }

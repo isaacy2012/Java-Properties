@@ -13,7 +13,7 @@ public class DelegateProperty<T> implements Property<T> {
      *
      * @param getter the getter
      */
-    public DelegateProperty(Supplier<T> getter) {
+    DelegateProperty(Supplier<T> getter) {
         this.getter = getter;
     }
 

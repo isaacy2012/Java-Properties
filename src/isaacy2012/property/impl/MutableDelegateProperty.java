@@ -24,7 +24,7 @@ public class MutableDelegateProperty<T> extends DelegateProperty<T> implements M
      * @param getter the getter
      * @param setter the setter
      */
-    public MutableDelegateProperty(Supplier<T> getter, Consumer<T> setter) {
+    MutableDelegateProperty(Supplier<T> getter, Consumer<T> setter) {
         super(getter);
         this.setter = setter;
     }
