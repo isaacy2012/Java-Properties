@@ -1,8 +1,6 @@
 package isaacy2012.property;
 
-import isaacy2012.property.impl.DelegateProperty;
-import isaacy2012.property.impl.DelegatePropertyBuilder;
-import isaacy2012.property.impl.ValuePropertyBuilder;
+import isaacy2012.property.impl.*;
 
 import java.util.function.Supplier;
 
@@ -45,6 +43,29 @@ public interface Property<T> {
      */
     static <T> ValuePropertyBuilder<T> withValue(T value) {
         return new ValuePropertyBuilder<>(value);
+    }
+
+
+    /**
+     * Of property mutable property.
+     *
+     * @param <T>  the type parameter
+     * @param prop the prop
+     * @return the mutable property
+     */
+    static <T> PropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
+        return new PropDelegatePropertyBuilder<>(prop).build();
+    }
+
+    /**
+     * Of property prop delegate property builder.
+     *
+     * @param <T>  the type parameter
+     * @param prop the prop
+     * @return the prop delegate property builder
+     */
+    static <T> PropDelegatePropertyBuilder<T> withProperty(MutableProperty<T> prop) {
+        return new PropDelegatePropertyBuilder<>(prop);
     }
 
     /**

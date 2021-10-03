@@ -29,8 +29,8 @@ public class MutableValuePropertyBuilderWithSetter<T> {
      */
     public MutableProperty<T> build() {
         return new MutableValueProperty<>(builder.value,
-                builder.getter != null ? builder.getter : (t) -> t,
-                this.setter != null ? this.setter : (t) -> t
+                builder.getter != null ? builder.getter : Function.identity(),
+                this.setter != null ? this.setter : Function.identity()
         );
     }
 }

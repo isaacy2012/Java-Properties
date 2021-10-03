@@ -1,9 +1,9 @@
 package isaacy2012.property;
 
-import isaacy2012.property.impl.MutableDelegatePropertyBuilder;
-import isaacy2012.property.impl.MutableValuePropertyBuilder;
+import isaacy2012.property.impl.*;
 
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public interface MutableProperty<T> extends Property<T> {
@@ -45,5 +45,30 @@ public interface MutableProperty<T> extends Property<T> {
      */
     static <T> MutableValuePropertyBuilder<T> withValue(T value) {
         return new MutableValuePropertyBuilder<>(value);
+    }
+
+    /**
+     * Of property mutable prop delegate property.
+     *
+     * @param <T>  the type parameter
+     * @param prop the prop
+     * @return the mutable property
+     */
+    static <T> MutablePropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
+        return new MutablePropDelegatePropertyBuilder<>(prop)
+                .withGetter(Function.identity())
+                .withSetter(Function.identity())
+                .build();
+    }
+
+    /**
+     * With property mutable prop delegate property builder.
+     *
+     * @param <T>  the type parameter
+     * @param prop the prop
+     * @return the prop delegate property builder
+     */
+    static <T> MutablePropDelegatePropertyBuilder<T> withProperty(MutableProperty<T> prop) {
+        return new MutablePropDelegatePropertyBuilder<>(prop);
     }
 }

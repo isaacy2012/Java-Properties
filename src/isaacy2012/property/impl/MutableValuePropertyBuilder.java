@@ -45,7 +45,7 @@ public class MutableValuePropertyBuilder<T> extends ValuePropertyBuilder<T> {
     @Override
     public MutableProperty<T> build() {
         return new MutableValueProperty<>(value,
-                getter != null ? getter : (t) -> t,
-                (t) -> t);
+                getter != null ? getter : Function.identity(),
+                Function.identity());
     }
 }

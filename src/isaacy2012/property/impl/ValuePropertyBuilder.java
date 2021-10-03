@@ -47,6 +47,6 @@ public class ValuePropertyBuilder<T> {
      * @return the property
      */
     public Property<T> build() {
-        return new ValueProperty<>(value, getter != null ? getter : (t) -> t);
+        return new ImmutableValueProperty<>(value, getter != null ? getter : Function.identity());
     }
 }
