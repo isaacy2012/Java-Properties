@@ -53,7 +53,7 @@ public interface Property<T> {
      * @param prop the prop
      * @return the mutable property
      */
-    static <T> PropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
+    static <T> ImmutablePropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
         return new PropDelegatePropertyBuilder<>(prop).build();
     }
 
