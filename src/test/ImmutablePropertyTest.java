@@ -1,5 +1,6 @@
 package test;
 
+import isaacy2012.property.MutableProperty;
 import isaacy2012.property.Property;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +39,7 @@ public class ImmutablePropertyTest {
      * Property same as object.
      */
     @Test
-    void property_same_as_object() {
+    void delegate_property_same_as_object() {
         class StringList {
             public List<String> _strings;
             public final Property<List<String>> strings;
@@ -58,6 +59,30 @@ public class ImmutablePropertyTest {
         strList._strings.add("Goodbye");
         assertEquals(List.of("Hi", "Bye", "Goodbye"), strList.strings.get());
         assertSame(strList._strings, strList.strings.get());
+    }
 
+    /**
+     * Property same as object.
+     */
+    @Test
+    void prop_delegate_property_same_as_object() {
+        class StringList {
+            public final MutableProperty<List<String>> _strings = MutableProperty.ofEmpty();
+            public final Property<List<String>> strings = Property.ofProperty(_strings);
+
+            public StringList(List<String> strings) {
+                this._strings.set(strings);
+            }
+        }
+
+        List<String> words = new ArrayList<>();
+        words.add("Hi");
+        words.add("Bye");
+
+        StringList strList = new StringList(words);
+        assertSame(strList._strings.get(), strList.strings.get());
+        strList._strings.get().add("Goodbye");
+        assertEquals(List.of("Hi", "Bye", "Goodbye"), strList.strings.get());
+        assertSame(strList._strings.get(), strList.strings.get());
     }
 }
