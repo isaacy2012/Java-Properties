@@ -15,17 +15,6 @@ public interface MutableProperty<T> extends Property<T> {
     void set(T value);
 
     /**
-     * Instantiates a new Property builder.
-     *
-     * @param <T>    the type parameter
-     * @param getter the getter
-     * @return the delegate property builder
-     */
-    static <T> MutableDelegatePropertyBuilder<T> withGetter(Supplier<T> getter) {
-        return new MutableDelegatePropertyBuilder<>(getter);
-    }
-
-    /**
      * Of mutable property.
      *
      * @param <T>   the type parameter
@@ -34,6 +23,16 @@ public interface MutableProperty<T> extends Property<T> {
      */
     static <T> MutableProperty<T> of(T value) {
         return withValue(value).build();
+    }
+
+    /**
+     * Of empty mutable value property builder.
+     *
+     * @param <T> the type parameter
+     * @return the mutable value property builder
+     */
+    static <T> MutableProperty<T> ofEmpty() {
+        return of(null);
     }
 
     /**
@@ -48,6 +47,16 @@ public interface MutableProperty<T> extends Property<T> {
     }
 
     /**
+     * With empty mutable value property builder.
+     *
+     * @param <T> the type parameter
+     * @return the mutable value property builder
+     */
+    static <T> MutableValuePropertyBuilder<T> withEmpty() {
+        return withValue(null);
+    }
+
+    /**
      * Of property mutable prop delegate property.
      *
      * @param <T>  the type parameter
@@ -59,6 +68,17 @@ public interface MutableProperty<T> extends Property<T> {
                 .withGetter(Function.identity())
                 .withSetter(Function.identity())
                 .build();
+    }
+
+    /**
+     * Instantiates a new Property builder.
+     *
+     * @param <T>    the type parameter
+     * @param getter the getter
+     * @return the delegate property builder
+     */
+    static <T> MutableDelegatePropertyBuilder<T> withGetter(Supplier<T> getter) {
+        return new MutableDelegatePropertyBuilder<>(getter);
     }
 
     /**

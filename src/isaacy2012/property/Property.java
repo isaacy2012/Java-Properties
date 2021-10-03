@@ -1,6 +1,7 @@
 package isaacy2012.property;
 
 import isaacy2012.property.impl.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -14,6 +15,7 @@ import java.util.function.Supplier;
  * @author Isaac Young youngisaa/isaacy2012
  */
 public interface Property<T> {
+
     /**
      * Get the value.
      *
@@ -33,6 +35,15 @@ public interface Property<T> {
         return withValue(value).build();
     }
 
+    /**
+     * Of empty property.
+     *
+     * @param <T> the type parameter
+     * @return the property
+     */
+    static <T> Property<T> ofEmpty() {
+        return of(null);
+    }
 
     /**
      * With value value property builder.
@@ -45,6 +56,15 @@ public interface Property<T> {
         return new ValuePropertyBuilder<>(value);
     }
 
+    /**
+     * With empty property.
+     *
+     * @param <T> the type parameter
+     * @return the property
+     */
+    static <T> ValuePropertyBuilder<T> withEmpty() {
+        return withValue(null);
+    }
 
     /**
      * Of property mutable property.
@@ -53,7 +73,7 @@ public interface Property<T> {
      * @param prop the prop
      * @return the mutable property
      */
-    static <T> ImmutablePropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
+    static <T> ImmutablePropDelegateProperty<T> ofProperty(@NotNull MutableProperty<T> prop) {
         return new PropDelegatePropertyBuilder<>(prop).build();
     }
 
@@ -64,7 +84,7 @@ public interface Property<T> {
      * @param prop the prop
      * @return the prop delegate property builder
      */
-    static <T> PropDelegatePropertyBuilder<T> withProperty(MutableProperty<T> prop) {
+    static <T> PropDelegatePropertyBuilder<T> withProperty(@NotNull MutableProperty<T> prop) {
         return new PropDelegatePropertyBuilder<>(prop);
     }
 
