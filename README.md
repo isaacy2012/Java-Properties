@@ -1,5 +1,5 @@
 # Java-Properties
-Java Properties attempts to emulate C# and Kotlin's properties by wrapping fields around `Property<>` and `MutableProperty<>` classes respectively.
+Java Properties attempts to emulate C# and Kotlin's properties by wrapping fields around `Property<>` and `MutableProperty<>` classes.
 
 This allows for easier modification when changing the way fields are accessed or set, and eliminating the need for boilerplate `get()` and `set()`V methods: 
 ```java
