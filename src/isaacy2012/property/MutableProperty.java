@@ -47,16 +47,6 @@ public interface MutableProperty<T> extends Property<T> {
     }
 
     /**
-     * With empty mutable value property builder.
-     *
-     * @param <T> the type parameter
-     * @return the mutable value property builder
-     */
-    static <T> MutableValuePropertyBuilder<T> withEmpty() {
-        return withValue(null);
-    }
-
-    /**
      * Of property mutable prop delegate property.
      *
      * @param <T>  the type parameter

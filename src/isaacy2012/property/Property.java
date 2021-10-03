@@ -57,16 +57,6 @@ public interface Property<T> {
     }
 
     /**
-     * With empty property.
-     *
-     * @param <T> the type parameter
-     * @return the property
-     */
-    static <T> ValuePropertyBuilder<T> withEmpty() {
-        return withValue(null);
-    }
-
-    /**
      * Of property mutable property.
      *
      * @param <T>  the type parameter
