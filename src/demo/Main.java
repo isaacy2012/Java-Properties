@@ -1,4 +1,4 @@
-package isaacy2012;
+package demo;
 
 public class Main {
     /**
@@ -8,12 +8,20 @@ public class Main {
      */
     public static void main(String[] args) {
         carDemo();
+        propCarDemo();
         ageDemo();
         personDemo();
     }
 
     private static void carDemo() {
         Car car = new Car("ferrari", 480);
+        System.out.println(car);
+        car.doStuff();
+        System.out.println(car);
+    }
+
+    private static void propCarDemo() {
+        CarWithProp car = new CarWithProp("ferrari", 480);
         System.out.println(car);
         car.doStuff();
         System.out.println(car);

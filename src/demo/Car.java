@@ -1,4 +1,4 @@
-package isaacy2012;
+package demo;
 
 import isaacy2012.property.MutableProperty;
 import isaacy2012.property.Property;
