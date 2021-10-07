@@ -2,7 +2,6 @@ package isaacy2012.property;
 
 import isaacy2012.property.impl.*;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -33,6 +32,20 @@ public interface MutableProperty<T> extends Property<T> {
      */
     static <T> MutableProperty<T> ofEmpty() {
         return of(null);
+    }
+
+    /**
+     * With empty mutable value property builder.
+     *
+     * @param <T>   the type parameter
+     * @param clazz the clazz
+     * @return the mutable value property builder
+     */
+    static <T> MutableValuePropertyBuilder<T> withEmpty(T mustBeNull) {
+        if (mustBeNull != null) {
+            throw new RuntimeException("withEmpty() must be called with a casted null!");
+        }
+        return withValue(null);
     }
 
     /**

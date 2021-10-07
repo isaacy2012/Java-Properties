@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.Property;
+import isaacy2012.property.ValueProperty;
 
 import java.util.function.Function;
 
@@ -9,7 +10,7 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class ValuePropertyBuilder<T> {
+public class UninitializedValuePropertyBuilder<T> {
     /**
      * The Value.
      */
@@ -21,21 +22,12 @@ public class ValuePropertyBuilder<T> {
     Function<T, T> getter;
 
     /**
-     * Instantiates a new Value property builder.
-     *
-     * @param value the value
-     */
-    public ValuePropertyBuilder(T value) {
-        this.value = value;
-    }
-
-    /**
      * With getter value property builder.
      *
      * @param getter the getter
      * @return the value property builder
      */
-    public ValuePropertyBuilder<T> withGetter(Function<T, T> getter) {
+    public UninitializedValuePropertyBuilder<T> withGetter(Function<T, T> getter) {
         this.getter = getter;
 
         return this;
@@ -46,7 +38,7 @@ public class ValuePropertyBuilder<T> {
      *
      * @return the property
      */
-    public Property<T> build() {
-        return new ImmutableValueProperty<>(value, getter != null ? getter : Function.identity(), true);
+    public ImmutableValueProperty<T> build() {
+        return new ImmutableValueProperty<>(null, getter != null ? getter : Function.identity(), false);
     }
 }

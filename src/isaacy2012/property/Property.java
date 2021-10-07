@@ -42,7 +42,21 @@ public interface Property<T> {
      * @return the property
      */
     static <T> Property<T> ofEmpty() {
-        return of(null);
+        return new UninitializedValuePropertyBuilder<T>().build();
+    }
+
+    /**
+     * With empty value property builder.
+     *
+     * @param <T>        the type parameter
+     * @param mustBeNull the must be null
+     * @return the value property builder
+     */
+    static <T> UninitializedValuePropertyBuilder<T> withEmpty(T mustBeNull) {
+        if (mustBeNull != null) {
+            throw new RuntimeException("withEmpty() must be called with a casted null!");
+        }
+        return new UninitializedValuePropertyBuilder<>();
     }
 
     /**
@@ -57,13 +71,13 @@ public interface Property<T> {
     }
 
     /**
-     * Of property mutable property.
+     * Of property immutable prop delegate property.
      *
      * @param <T>  the type parameter
      * @param prop the prop
      * @return the mutable property
      */
-    static <T> ImmutablePropDelegateProperty<T> ofProperty(@NotNull MutableProperty<T> prop) {
+    static <T> ImmutablePropDelegateProperty<T> ofProperty(@NotNull Property<T> prop) {
         return new PropDelegatePropertyBuilder<>(prop).build();
     }
 
@@ -74,7 +88,7 @@ public interface Property<T> {
      * @param prop the prop
      * @return the prop delegate property builder
      */
-    static <T> PropDelegatePropertyBuilder<T> withProperty(@NotNull MutableProperty<T> prop) {
+    static <T> PropDelegatePropertyBuilder<T> withProperty(@NotNull Property<T> prop) {
         return new PropDelegatePropertyBuilder<>(prop);
     }
 
