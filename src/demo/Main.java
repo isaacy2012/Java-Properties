@@ -38,17 +38,17 @@ public class Main {
     }
 
     private static void personDemo() {
-        Person person = new Person("Bob", "Mortimer", 1991, "Hi there!");
-        System.out.println(person);
-        person.age.set(13);
-        System.out.println(person);
-        person.birthYear.set(1965);
-        System.out.println(person);
-        person.greeting.set("");
-        System.out.println(person);
-        person.greeting.set("howdy");
-        System.out.println(person);
-        Person noLastName = new Person("Alice", null, 1992, "I'm Alice");
+        DemoPerson demoPerson = new DemoPerson("Bob", "Mortimer", 1991, "Hi there!");
+        System.out.println(demoPerson);
+        demoPerson.age.set(13);
+        System.out.println(demoPerson);
+        demoPerson.birthYear.set(1965);
+        System.out.println(demoPerson);
+        demoPerson.greeting.set("");
+        System.out.println(demoPerson);
+        demoPerson.greeting.set("howdy");
+        System.out.println(demoPerson);
+        DemoPerson noLastName = new DemoPerson("Alice", null, 1992, "I'm Alice");
         System.out.println(noLastName);
     }
 }
