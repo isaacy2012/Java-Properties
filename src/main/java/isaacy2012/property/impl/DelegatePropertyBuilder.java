@@ -1,7 +1,6 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.Property;
-import isaacy2012.property.impl.DelegateProperty;
 
 import java.util.function.Supplier;
 

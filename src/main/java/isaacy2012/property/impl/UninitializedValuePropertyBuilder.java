@@ -1,8 +1,5 @@
 package isaacy2012.property.impl;
 
-import isaacy2012.property.Property;
-import isaacy2012.property.ValueProperty;
-
 import java.util.function.Function;
 
 /**

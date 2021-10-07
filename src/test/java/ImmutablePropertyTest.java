@@ -1,5 +1,3 @@
-package test;
-
 import isaacy2012.property.*;
 import isaacy2012.property.exception.PropertyAlreadyInitializedException;
 import isaacy2012.property.exception.PropertyNotInitializedException;
@@ -18,7 +16,7 @@ public class ImmutablePropertyTest {
      * Property same as primative.
      */
     @Test
-    void property_same_as_primative() {
+    public void Test_property_same_as_primative() {
         class NumberBox {
             public int _num;
             public final Property<Integer> num;
@@ -30,9 +28,9 @@ public class ImmutablePropertyTest {
         }
 
         NumberBox numBox = new NumberBox(3);
-        assertEquals(numBox._num, numBox.num.get());
+        assertEquals(numBox._num, (int) numBox.num.get());
         numBox._num = 4;
-        assertEquals(numBox._num, numBox.num.get());
+        assertEquals(numBox._num, (int) numBox.num.get());
     }
 
     /**

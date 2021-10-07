@@ -1,7 +1,5 @@
 package isaacy2012.property.impl;
 
-import isaacy2012.property.MutableProperty;
-
 import java.util.function.Function;
 
 public class MutablePropDelegatePropertyBuilderWithSetter<T> {

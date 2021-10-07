@@ -3,7 +3,6 @@ package isaacy2012.property.impl;
 import isaacy2012.property.Property;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class ImmutablePropDelegateProperty<T> implements Property<T> {
     private final Property<T> _property;

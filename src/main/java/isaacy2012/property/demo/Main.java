@@ -1,4 +1,4 @@
-package demo;
+package isaacy2012.property.demo;
 
 public class Main {
     /**

@@ -1,7 +1,6 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.MutableProperty;
-import isaacy2012.property.Property;
 
 import java.util.function.Function;
 
