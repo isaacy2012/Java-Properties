@@ -16,7 +16,7 @@ public class ImmutablePropertyTest {
      * Property same as primative.
      */
     @Test
-    public void Test_property_same_as_primative() {
+    public void property_same_as_primative() {
         class NumberBox {
             public int _num;
             public final Property<Integer> num;
@@ -102,5 +102,10 @@ public class ImmutablePropertyTest {
         assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
         assertEquals("CHARLIE", student.upperName.get());
 
+    }
+
+    @Test
+    void check_maven_works() {
+        assert false;
     }
 }
