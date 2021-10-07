@@ -22,7 +22,7 @@ class Person {
 }
 ```
 
-To change this so that the name was always uppercase, the code could simply be changed to add a non-default setter:
+To change this so that the name is always uppercase, the code can simply be changed to add a non-default setter:
 ```java
 class Person {
   public final MutableProperty<String> name = MutableProperty.withValue((String) null)
