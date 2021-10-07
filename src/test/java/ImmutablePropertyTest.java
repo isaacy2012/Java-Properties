@@ -104,8 +104,4 @@ public class ImmutablePropertyTest {
 
     }
 
-    @Test
-    void check_maven_works() {
-        assert false;
-    }
 }
