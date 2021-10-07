@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Java-Properties" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4c5fd760-ac9e-4d0f-a58e-061918a759ba" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,14 +33,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Uni-2021/NWEN243/Project_3" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showRenderedDocs" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="isaacy2012.property.builder" />
       <recent name="isaacy2012.property" />
+      <recent name="isaacy2012.property.impl" />
+      <recent name="isaacy2012.property.builder" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ImmutablePropertyTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="isaacy2012.Main" />
       <module name="Java-Properties" />
@@ -57,8 +74,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ImmutablePropertyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java-Properties" />
+      <extension name="coverage" sample_coverage="false" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="isaacy2012.property.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ImmutablePropertyTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ImmutablePropertyTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImmutablePropertyTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -72,6 +114,11 @@
       <option name="presentableId" value="Default" />
       <updated>1633068797625</updated>
       <workItem from="1633068799715" duration="7766000" />
+      <workItem from="1633259030510" duration="225000" />
+      <workItem from="1633259273025" duration="5000" />
+      <workItem from="1633421060537" duration="1712000" />
+      <workItem from="1633487465965" duration="12000" />
+      <workItem from="1633606049445" duration="1354000" />
     </task>
     <servers />
   </component>
@@ -88,5 +135,13 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.exec" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633607401420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>isaacy2012.property.exception.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.ic" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633607254654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.*</FILTER>
+    </SUITE>
   </component>
 </project>
