@@ -1,5 +1,3 @@
-package isaacy2012.property.demo;
-
 import isaacy2012.property.MutableProperty;
 
 class Person {

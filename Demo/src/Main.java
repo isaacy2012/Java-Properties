@@ -1,5 +1,3 @@
-package isaacy2012.property.demo;
-
 public class Main {
     /**
      * The entry point of application.

@@ -12,7 +12,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/isaacy2012/property/demo" />
       <excludeFolder url="file://$MODULE_DIR$/src/test" />
     </content>
     <orderEntry type="inheritedJdk" />
