@@ -1,14 +1,14 @@
 package test;
 
-import isaacy2012.property.MutableProperty;
-import isaacy2012.property.Property;
+import isaacy2012.property.*;
+import isaacy2012.property.exception.PropertyAlreadyInitializedException;
+import isaacy2012.property.exception.PropertyNotInitializedException;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type Immutable property test.
@@ -84,5 +84,25 @@ public class ImmutablePropertyTest {
         strList._strings.get().add("Goodbye");
         assertEquals(List.of("Hi", "Bye", "Goodbye"), strList.strings.get());
         assertSame(strList._strings.get(), strList.strings.get());
+    }
+
+    @Test
+    void empty_property() {
+        class Student {
+            public final ValueProperty<String> name = Property.withEmpty((String) null).build();
+            public final Property<String> upperName = Property.withProperty(this.name)
+                    .withGetter(String::toUpperCase)
+                    .build();
+
+        }
+
+        Student student = new Student();
+        assertThrows(PropertyNotInitializedException.class, student.name::get);
+        assertThrows(PropertyNotInitializedException.class, student.upperName::get);
+        student.name.init("Charlie");
+        assertEquals("CHARLIE", student.upperName.get());
+        assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
+        assertEquals("CHARLIE", student.upperName.get());
+
     }
 }
