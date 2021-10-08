@@ -50,3 +50,16 @@ class Person {
 ```
 
 Leaving all external code the same with `myPerson.name.get()` to get the value, `myPerson.name.set(String)` to set the value, and `myPerson.uppercaseName.get()` to get the uppercase value.
+
+For compatibility with normal fields, `delegateTo()` can be used: 
+
+```java
+class Person {
+    public String name;
+    public final Property<String> uppercaseName = Property.delegateTo(() -> name.toUpperCase());
+
+    Person(String name) {
+        this.name = name;
+    }
+}
+```
