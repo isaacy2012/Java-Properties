@@ -40,7 +40,7 @@ public interface Property<T> {
      * @param <T> the type parameter
      * @return the property
      */
-    static <T> Property<T> ofEmpty() {
+    static <T> ValueProperty<T> ofEmpty() {
         return new UninitializedValuePropertyBuilder<T>().build();
     }
 
