@@ -25,20 +25,21 @@ public interface MutableProperty<T> extends Property<T> {
     }
 
     /**
-     * Of empty mutable value property builder.
+     * Create an empty MutableProperty
      *
      * @param <T> the type parameter
-     * @return the mutable value property builder
+     * @return the property
      */
     static <T> MutableProperty<T> ofEmpty() {
         return of(null);
     }
 
     /**
-     * With empty mutable value property builder.
+     * Create an empty MutableValuePropertyBuilder.
+     * The parameter must be a casted null, which informs what the type parameter is.
      *
-     * @param <T>   the type parameter
-     * @param clazz the clazz
+     * @param <T>        the type parameter
+     * @param mustBeNull the casted null, that informs the type parameter
      * @return the mutable value property builder
      */
     static <T> MutableValuePropertyBuilder<T> withEmpty(T mustBeNull) {

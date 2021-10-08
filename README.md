@@ -49,4 +49,4 @@ class Person {
 }
 ```
 
-Leaving all external code the same with `myPerson.name.get()` to get the value and `myPerson.name.set(String)` to set the value.
+Leaving all external code the same with `myPerson.name.get()` to get the value, `myPerson.name.set(String)` to set the value, and `myPerson.uppercaseName.get()` to get the uppercase value.

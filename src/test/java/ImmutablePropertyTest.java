@@ -85,7 +85,7 @@ public class ImmutablePropertyTest {
     }
 
     @Test
-    void empty_property() {
+    void with_empty_property() {
         class Student {
             public final ValueProperty<String> name = Property.withEmpty((String) null).build();
             public final Property<String> upperName = Property.withProperty(this.name)
@@ -101,7 +101,62 @@ public class ImmutablePropertyTest {
         assertEquals("CHARLIE", student.upperName.get());
         assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
         assertEquals("CHARLIE", student.upperName.get());
+    }
+
+    @Test
+    void of_empty_property() {
+        class Student {
+            public final ValueProperty<String> name = Property.ofEmpty();
+            public final Property<String> upperName = Property.withProperty(this.name)
+                    .withGetter(String::toUpperCase)
+                    .build();
+
+        }
+
+        Student student = new Student();
+        assertThrows(PropertyNotInitializedException.class, student.name::get);
+        assertThrows(PropertyNotInitializedException.class, student.upperName::get);
+        student.name.init("Charlie");
+        assertEquals("CHARLIE", student.upperName.get());
+        assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
+        assertEquals("CHARLIE", student.upperName.get());
+    }
+
+    @Test
+    void of_delegate() {
+        class Student {
+            public final Property<String> name = Property.of("Adam");
+        }
+
+        Student student = new Student();
+        assertEquals("Adam", student.name.get());
+        assertEquals("Adam", student.name.toString());
+    }
+
+    @Test
+    void with_delegate() {
+        class Student {
+            public final Property<String> name = Property.withValue("Adam")
+                    .withGetter(String::toUpperCase)
+                    .build();
+        }
+
+        Student student = new Student();
+        assertEquals("ADAM", student.name.get());
+        assertEquals("Adam -> ADAM", student.name.toString());
+    }
+
+    @Test
+    void with_must_be_null() {
+        class Student {
+            public final Property<String> name = Property.withEmpty("Adam").build();
+        }
+
+        Exception exception = assertThrows(RuntimeException.class, Student::new);
+        assertEquals("withEmpty() must be called with a casted null!", exception.getMessage());
 
     }
+
+
 
 }

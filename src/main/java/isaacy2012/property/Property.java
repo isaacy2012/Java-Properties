@@ -35,20 +35,21 @@ public interface Property<T> {
     }
 
     /**
-     * Of empty property.
+     * Create an empty Property
      *
      * @param <T> the type parameter
      * @return the property
      */
-    static <T> Property<T> ofEmpty() {
+    static <T> ValueProperty<T> ofEmpty() {
         return new UninitializedValuePropertyBuilder<T>().build();
     }
 
     /**
-     * With empty value property builder.
+     * Create an empty UninitializedValuePropertyBuilder.
+     * The parameter must be a casted null, which informs what the type parameter is.
      *
      * @param <T>        the type parameter
-     * @param mustBeNull the must be null
+     * @param mustBeNull the casted null, that informs the type parameter
      * @return the value property builder
      */
     static <T> UninitializedValuePropertyBuilder<T> withEmpty(T mustBeNull) {
@@ -59,7 +60,7 @@ public interface Property<T> {
     }
 
     /**
-     * With value value property builder.
+     * Creates a PropertyBuilder that contains the passed in value.
      *
      * @param <T>   the type parameter
      * @param value the value
@@ -70,7 +71,7 @@ public interface Property<T> {
     }
 
     /**
-     * Of property immutable prop delegate property.
+     * Creates an ImmutablePropDelegateProperty with the passed in property.
      *
      * @param <T>  the type parameter
      * @param prop the prop
@@ -81,7 +82,7 @@ public interface Property<T> {
     }
 
     /**
-     * Of property prop delegate property builder.
+     * Creates a PropDelegatePropertyBuilder with the passed in property.
      *
      * @param <T>  the type parameter
      * @param prop the prop
@@ -92,7 +93,7 @@ public interface Property<T> {
     }
 
     /**
-     * Delegate to property.
+     * Delegate to another field, using a Supplier getter, and build.
      *
      * @param <T>    the type parameter
      * @param getter the getter
@@ -103,7 +104,7 @@ public interface Property<T> {
     }
 
     /**
-     * With getter property.
+     * Delegate to another field, using a Supplier getter, and returns the DelegatePropertyBuilder.
      *
      * @param <T>    the type parameter
      * @param getter the getter
