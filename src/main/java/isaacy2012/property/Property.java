@@ -100,20 +100,8 @@ public interface Property<T> {
      * @return the property
      */
     static <T> Property<T> delegateTo(Supplier<T> getter) {
-        return withGetter(getter).build();
+        return new DelegatePropertyBuilder<>(getter).build();
     }
-
-    /**
-     * Delegate to another field, using a Supplier getter, and returns the DelegatePropertyBuilder.
-     *
-     * @param <T>    the type parameter
-     * @param getter the getter
-     * @return the property
-     */
-    static <T> DelegatePropertyBuilder<T> withGetter(Supplier<T> getter) {
-        return new DelegatePropertyBuilder<>(getter);
-    }
-
 
 }
 
