@@ -30,6 +30,6 @@ public class DelegatePropertyBuilder<T> {
      * @return the property
      */
     public Property<T> build() {
-        return new DelegateProperty<>(getter);
+        return new ImmutableDelegateProperty<>(getter);
     }
 }

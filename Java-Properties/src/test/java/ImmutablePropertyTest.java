@@ -1,6 +1,6 @@
 import isaacy2012.property.*;
-import isaacy2012.property.exception.PropertyAlreadyInitializedException;
-import isaacy2012.property.exception.PropertyNotInitializedException;
+import isaacy2012.property.exception.ValueAlreadyInitializedException;
+import isaacy2012.property.exception.ValueNotInitializedException;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -95,11 +95,11 @@ public class ImmutablePropertyTest {
         }
 
         Student student = new Student();
-        assertThrows(PropertyNotInitializedException.class, student.name::get);
-        assertThrows(PropertyNotInitializedException.class, student.upperName::get);
+        assertThrows(ValueNotInitializedException.class, student.name::get);
+        assertThrows(ValueNotInitializedException.class, student.upperName::get);
         student.name.init("Charlie");
         assertEquals("CHARLIE", student.upperName.get());
-        assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
+        assertThrows(ValueAlreadyInitializedException.class, () -> student.name.init("Bob"));
         assertEquals("CHARLIE", student.upperName.get());
     }
 
@@ -114,11 +114,11 @@ public class ImmutablePropertyTest {
         }
 
         Student student = new Student();
-        assertThrows(PropertyNotInitializedException.class, student.name::get);
-        assertThrows(PropertyNotInitializedException.class, student.upperName::get);
+        assertThrows(ValueNotInitializedException.class, student.name::get);
+        assertThrows(ValueNotInitializedException.class, student.upperName::get);
         student.name.init("Charlie");
         assertEquals("CHARLIE", student.upperName.get());
-        assertThrows(PropertyAlreadyInitializedException.class, () -> student.name.init("Bob"));
+        assertThrows(ValueAlreadyInitializedException.class, () -> student.name.init("Bob"));
         assertEquals("CHARLIE", student.upperName.get());
     }
 
@@ -181,25 +181,29 @@ public class ImmutablePropertyTest {
         class Student {
             public MutableProperty<String> _name = MutableProperty.of("Adam");
             public final Property<String> name = Property.ofProperty(_name);
-        }
-
-        Student student = new Student();
-        assertEquals("Adam", student.name.get());
-        assertEquals("Adam", student.name.toString());
-    }
-
-    @Test
-    void of_uninitialized_with_getter() {
-        class Student {
-            public ValueProperty<String> _name = Property.ofEmpty();
-            public final Property<String> name = Property.withProperty(_name)
+            public final Property<String> uppercaseName = Property.withProperty(_name)
                     .withGetter(String::toUpperCase)
                     .build();
         }
 
         Student student = new Student();
-        assertThrows(PropertyNotInitializedException.class, student.name::get);
-        student._name.init("Adam");
+        assertEquals("Adam", student.name.get());
+        assertEquals("Adam", student.name.toString());
+        assertEquals("ADAM", student.uppercaseName.get());
+        assertEquals("Adam -> ADAM", student.uppercaseName.toString());
+    }
+
+    @Test
+    void of_uninitialized_with_getter() {
+        class Student {
+            public final ValueProperty<String> name = Property.withEmpty((String) null)
+                    .withGetter(String::toUpperCase)
+                    .build();
+        }
+
+        Student student = new Student();
+        assertThrows(ValueNotInitializedException.class, student.name::get);
+        student.name.init("Adam");
         assertEquals("ADAM", student.name.get());
         assertEquals("Adam -> ADAM", student.name.toString());
     }

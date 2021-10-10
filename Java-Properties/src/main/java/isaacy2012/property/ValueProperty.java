@@ -1,5 +1,7 @@
 package isaacy2012.property;
 
+import isaacy2012.property.exception.ValueAlreadyInitializedException;
+
 /**
  * The interface Value property.
  *
@@ -7,9 +9,11 @@ package isaacy2012.property;
  */
 public interface ValueProperty<T> extends Property<T> {
     /**
-     * Init.
+     * Initialize the value.
      *
-     * @param t the t
+     * @param value the value
+     * @throws ValueAlreadyInitializedException
+     * If the underlying value has already been initialized
      */
-    void init(T t);
+    void init(T value);
 }

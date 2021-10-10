@@ -19,6 +19,8 @@ public interface Property<T> {
      * Get the value.
      *
      * @return the value
+     * @throws isaacy2012.property.exception.ValueNotInitializedException
+     * If this Property is a ValueProperty and its value has not been initialized
      */
     T get();
 

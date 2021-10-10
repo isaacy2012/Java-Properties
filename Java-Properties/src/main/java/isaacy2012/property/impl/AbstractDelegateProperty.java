@@ -4,16 +4,22 @@ import isaacy2012.property.Property;
 
 import java.util.function.Supplier;
 
-public class DelegateProperty<T> implements Property<T> {
+/**
+ * A Delegate Property delegates the 'get()' to a getter.
+ * Thus, no value is stored in the property.
+ *
+ * @param <T> the type parameter
+ */
+public abstract class AbstractDelegateProperty<T> implements Property<T> {
     private final Supplier<T> getter;
 
 
     /**
-     * Instantiates a new Delegate property.
+     * Instantiates a new Abstract delegate property.
      *
      * @param getter the getter
      */
-    DelegateProperty(Supplier<T> getter) {
+    AbstractDelegateProperty(Supplier<T> getter) {
         this.getter = getter;
     }
 
