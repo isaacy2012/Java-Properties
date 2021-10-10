@@ -123,7 +123,7 @@ public class ImmutablePropertyTest {
     }
 
     @Test
-    void of_delegate() {
+    void of_value() {
         class Student {
             public final Property<String> name = Property.of("Adam");
         }
@@ -134,7 +134,7 @@ public class ImmutablePropertyTest {
     }
 
     @Test
-    void with_delegate() {
+    void with_value() {
         class Student {
             public final Property<String> name = Property.withValue("Adam")
                     .withGetter(String::toUpperCase)
@@ -147,6 +147,64 @@ public class ImmutablePropertyTest {
     }
 
     @Test
+    void of_delegate() {
+        class Student {
+            public String _name = "Adam";
+            public final Property<String> name = Property.delegateTo(() -> this._name);
+        }
+
+        Student student = new Student();
+        assertEquals("Adam", student.name.get());
+        assertEquals("Adam", student.name.toString());
+        student._name = "Bob";
+        assertEquals("Bob", student.name.get());
+        assertEquals("Bob", student.name.toString());
+    }
+
+    @Test
+    void of_delegate_with_getter() {
+        class Student {
+            public String _name = "Adam";
+            public final Property<String> name = Property.delegateTo(() -> this._name + "H");
+        }
+
+        Student student = new Student();
+        assertEquals("AdamH", student.name.get());
+        assertEquals("AdamH", student.name.toString());
+        student._name = "Bob";
+        assertEquals("BobH", student.name.get());
+        assertEquals("BobH", student.name.toString());
+    }
+
+    @Test
+    void of_property() {
+        class Student {
+            public MutableProperty<String> _name = MutableProperty.of("Adam");
+            public final Property<String> name = Property.ofProperty(_name);
+        }
+
+        Student student = new Student();
+        assertEquals("Adam", student.name.get());
+        assertEquals("Adam", student.name.toString());
+    }
+
+    @Test
+    void of_uninitialized_with_getter() {
+        class Student {
+            public ValueProperty<String> _name = Property.ofEmpty();
+            public final Property<String> name = Property.withProperty(_name)
+                    .withGetter(String::toUpperCase)
+                    .build();
+        }
+
+        Student student = new Student();
+        assertThrows(PropertyNotInitializedException.class, student.name::get);
+        student._name.init("Adam");
+        assertEquals("ADAM", student.name.get());
+        assertEquals("Adam -> ADAM", student.name.toString());
+    }
+
+    @Test
     void with_must_be_null() {
         class Student {
             public final Property<String> name = Property.withEmpty("Adam").build();
@@ -154,7 +212,6 @@ public class ImmutablePropertyTest {
 
         Exception exception = assertThrows(RuntimeException.class, Student::new);
         assertEquals("withEmpty() must be called with a casted null!", exception.getMessage());
-
     }
 
 
