@@ -46,8 +46,15 @@
     </configuration>
     <configuration name="ImmutablePropertyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Properties" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="isaacy2012.property.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ImmutablePropertyTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -79,9 +86,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.Java-Properties [Test]" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ImmutablePropertyTest" />
+      <item itemvalue="Maven.Java-Properties [Test]" />
     </list>
     <recent_temporary>
       <list>
@@ -104,5 +111,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.ic" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633848215419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
