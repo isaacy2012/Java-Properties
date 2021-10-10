@@ -36,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.53272253" />
@@ -57,7 +57,7 @@
       <recent name="isaacy2012.property.builder" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="JUnit.ImmutablePropertyTest">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Demo" />
@@ -84,13 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,16 +133,16 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.ImmutablePropertyTest" />
-      <item itemvalue="Maven.Java-Properties [test]" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="JUnit.ImmutablePropertyTest" />
+      <item itemvalue="Maven.Java-Properties [test]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.ImmutablePropertyTest" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Maven.Java-Properties [test]" />
       </list>
@@ -160,6 +162,7 @@
       <workItem from="1633421060537" duration="1712000" />
       <workItem from="1633487465965" duration="12000" />
       <workItem from="1633606049445" duration="6732000" />
+      <workItem from="1633847304616" duration="229000" />
     </task>
     <servers />
   </component>
