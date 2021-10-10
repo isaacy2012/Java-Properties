@@ -37,7 +37,7 @@ public class ImmutableValueProperty<T> implements ValueProperty<T> {
     @Override
     public T get() {
         if (!initialized) {
-            throw new PropertyNotInitializedException("Property has already been initialized!");
+            throw new PropertyNotInitializedException("Property has not been initialized yet!");
         }
         return getter.apply(value);
     }

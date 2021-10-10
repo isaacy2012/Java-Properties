@@ -27,6 +27,10 @@ public class ImmutablePropDelegateProperty<T> implements Property<T> {
 
     @Override
     public String toString() {
-        return get().toString();
+        if (get() == _property.get()) {
+            return get().toString();
+        } else {
+            return _property.get() + " -> " + get().toString();
+        }
     }
 }
