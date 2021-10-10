@@ -10,7 +10,7 @@ import java.util.function.Supplier;
  *
  * @param <T> the type parameter
  */
-public class MutableDelegateProperty<T> extends DelegateProperty<T> implements MutableProperty<T> {
+public class MutableDelegateProperty<T> extends AbstractDelegateProperty<T> implements MutableProperty<T> {
 
     /**
      * The Setter.
