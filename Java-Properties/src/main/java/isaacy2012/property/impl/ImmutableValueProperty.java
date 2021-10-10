@@ -1,14 +1,19 @@
 package isaacy2012.property.impl;
 
-import isaacy2012.property.exception.PropertyAlreadyInitializedException;
-import isaacy2012.property.exception.PropertyNotInitializedException;
-import isaacy2012.property.ValueProperty;
+import isaacy2012.property.exception.ValueAlreadyInitializedException;
+import isaacy2012.property.exception.ValueNotInitializedException;
 
 import java.util.function.Function;
 
-public class ImmutableValueProperty<T> implements ValueProperty<T> {
-    private T value;
-    private final Function<T, T> getter;
+/**
+ * The type Immutable value property.
+ *
+ * @param <T> the type parameter
+ */
+public class ImmutableValueProperty<T> extends AbstractValueProperty<T> {
+    /**
+     * Whether this property has been initialized yet
+     */
     private boolean initialized;
 
 
@@ -20,15 +25,14 @@ public class ImmutableValueProperty<T> implements ValueProperty<T> {
      * @param initialized the initialized
      */
     ImmutableValueProperty(T value, Function<T, T> getter, boolean initialized) {
-        this.value = value;
-        this.getter = getter;
+        super(value, getter);
         this.initialized = initialized;
     }
 
     @Override
     public void init(T t) {
         if (initialized) {
-            throw new PropertyAlreadyInitializedException("Property has already been initialized!");
+            throw new ValueAlreadyInitializedException("Property has already been initialized!");
         }
         this.value = t;
         initialized = true;
@@ -37,7 +41,7 @@ public class ImmutableValueProperty<T> implements ValueProperty<T> {
     @Override
     public T get() {
         if (!initialized) {
-            throw new PropertyNotInitializedException("Property has not been initialized yet!");
+            throw new ValueNotInitializedException("Property has not been initialized yet!");
         }
         return getter.apply(value);
     }
