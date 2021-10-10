@@ -4,8 +4,19 @@ import isaacy2012.property.Property;
 
 import java.util.function.Function;
 
+/**
+ * A Prop Delegate Property that is immutable.
+ *
+ * @param <T> the type parameter
+ */
 public class ImmutablePropDelegateProperty<T> implements Property<T> {
+    /**
+     * The Property.
+     */
     private final Property<T> _property;
+    /**
+     * The Getter.
+     */
     private final Function<T, T> getter;
 
 
