@@ -50,4 +50,13 @@ public class MutablePropDelegatePropertyBuilder<T> {
     public MutablePropDelegatePropertyBuilderWithSetter<T> withSetter(Function<T, T> setter) {
         return new MutablePropDelegatePropertyBuilderWithSetter<>(this, setter);
     }
+
+    /**
+     * Build mutable prop delegate property.
+     *
+     * @return the mutable prop delegate property
+     */
+    public MutablePropDelegateProperty<T> build() {
+        return withSetter(Function.identity()).build();
+    }
 }

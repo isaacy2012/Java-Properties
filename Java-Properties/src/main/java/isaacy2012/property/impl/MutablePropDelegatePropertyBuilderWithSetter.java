@@ -26,9 +26,10 @@ public class MutablePropDelegatePropertyBuilderWithSetter<T> {
      * @return the mutable property
      */
     public MutablePropDelegateProperty<T> build() {
-        return new MutablePropDelegateProperty<>(builder._property,
-                builder.getter != null ? builder.getter : Function.identity(),
-                this.setter != null ? this.setter : Function.identity()
+        return new MutablePropDelegateProperty<>(
+                builder._property,
+                builder.getter,
+                this.setter
         );
     }
 }
