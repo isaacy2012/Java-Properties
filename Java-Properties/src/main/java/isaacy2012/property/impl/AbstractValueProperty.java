@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.ValueProperty;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -26,7 +27,7 @@ public abstract class AbstractValueProperty<T> implements ValueProperty<T> {
      * @param value  the value
      * @param getter the getter
      */
-    AbstractValueProperty(T value, Function<T, T> getter) {
+    AbstractValueProperty(T value, @NotNull Function<T, T> getter) {
         this.value = value;
         this.getter = getter;
     }

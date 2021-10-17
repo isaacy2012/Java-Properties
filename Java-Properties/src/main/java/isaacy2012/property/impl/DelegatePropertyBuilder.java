@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -20,7 +21,7 @@ public class DelegatePropertyBuilder<T> {
      *
      * @param getter the getter
      */
-    public DelegatePropertyBuilder(Supplier<T> getter) {
+    public DelegatePropertyBuilder(@NotNull Supplier<T> getter) {
         this.getter = getter;
     }
 

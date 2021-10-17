@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.MutableProperty;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
@@ -22,8 +23,8 @@ public class MutableDelegatePropertyBuilderWithSetter<T> {
      * @param builder the builder
      * @param setter  the setter
      */
-    public MutableDelegatePropertyBuilderWithSetter(MutableDelegatePropertyBuilder<T> builder,
-                                                    Consumer<T> setter) {
+    public MutableDelegatePropertyBuilderWithSetter(@NotNull MutableDelegatePropertyBuilder<T> builder,
+                                                    @NotNull Consumer<T> setter) {
 
         this.builder = builder;
         this.setter = setter;

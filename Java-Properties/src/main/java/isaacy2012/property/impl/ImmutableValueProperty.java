@@ -2,6 +2,7 @@ package isaacy2012.property.impl;
 
 import isaacy2012.property.exception.ValueAlreadyInitializedException;
 import isaacy2012.property.exception.ValueNotInitializedException;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -24,7 +25,7 @@ public class ImmutableValueProperty<T> extends AbstractValueProperty<T> {
      * @param getter      the getter
      * @param initialized the initialized
      */
-    ImmutableValueProperty(T value, Function<T, T> getter, boolean initialized) {
+    ImmutableValueProperty(T value, @NotNull Function<T, T> getter, boolean initialized) {
         super(value, getter);
         this.initialized = initialized;
     }

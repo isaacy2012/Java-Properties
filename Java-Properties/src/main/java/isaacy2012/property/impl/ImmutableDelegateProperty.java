@@ -1,5 +1,7 @@
 package isaacy2012.property.impl;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.function.Supplier;
 
 public class ImmutableDelegateProperty<T> extends AbstractDelegateProperty<T> {
@@ -8,7 +10,7 @@ public class ImmutableDelegateProperty<T> extends AbstractDelegateProperty<T> {
      *
      * @param getter the getter
      */
-    ImmutableDelegateProperty(Supplier<T> getter) {
+    ImmutableDelegateProperty(@NotNull Supplier<T> getter) {
         super(getter);
     }
 }
