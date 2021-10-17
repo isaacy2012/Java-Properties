@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -19,7 +20,7 @@ public abstract class AbstractDelegateProperty<T> implements Property<T> {
      *
      * @param getter the getter
      */
-    AbstractDelegateProperty(Supplier<T> getter) {
+    AbstractDelegateProperty(@NotNull Supplier<T> getter) {
         this.getter = getter;
     }
 

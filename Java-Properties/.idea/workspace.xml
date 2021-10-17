@@ -34,7 +34,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.Java-Properties [Test]">
+  <component name="RunManager" selected="JUnit.All in Java-Properties">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Demo" />
@@ -155,7 +155,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633847547331</updated>
       <workItem from="1633847548785" duration="269000" />
-      <workItem from="1634451952952" duration="1231000" />
+      <workItem from="1634451952952" duration="2568000" />
     </task>
     <servers />
   </component>
@@ -164,6 +164,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java_Properties$MutablePropertyTest.ic" NAME="MutablePropertyTest Coverage Results" MODIFIED="1634452731547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>isaacy2012.property.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.exec" NAME="All in Java-Properties Coverage Results" MODIFIED="1634453943838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>isaacy2012.property.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.exec" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633849734551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

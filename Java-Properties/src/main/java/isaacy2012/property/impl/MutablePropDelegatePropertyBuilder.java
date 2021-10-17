@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.MutableProperty;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -35,7 +36,7 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param getter the getter
      * @return the value property builder
      */
-    public MutablePropDelegatePropertyBuilder<T> withGetter(Function<T, T> getter) {
+    public MutablePropDelegatePropertyBuilder<T> withGetter(@NotNull Function<T, T> getter) {
         this.getter = getter;
 
         return this;
@@ -47,7 +48,7 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param setter the setter
      * @return the property
      */
-    public MutablePropDelegatePropertyBuilderWithSetter<T> withSetter(Function<T, T> setter) {
+    public MutablePropDelegatePropertyBuilderWithSetter<T> withSetter(@NotNull Function<T, T> setter) {
         return new MutablePropDelegatePropertyBuilderWithSetter<>(this, setter);
     }
 

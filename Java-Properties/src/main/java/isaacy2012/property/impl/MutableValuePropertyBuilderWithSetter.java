@@ -16,8 +16,8 @@ public class MutableValuePropertyBuilderWithSetter<T> {
      * @param setter  the setter
      */
     public MutableValuePropertyBuilderWithSetter(
-            MutableValuePropertyBuilder<T> builder,
-            Function<T, T> setter
+            @NotNull MutableValuePropertyBuilder<T> builder,
+            @NotNull Function<T, T> setter
     ) {
         this.builder = builder;
         this.setter = setter;

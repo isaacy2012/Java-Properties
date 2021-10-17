@@ -1,5 +1,7 @@
 package isaacy2012.property.impl;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.function.Function;
 
 public class MutablePropDelegatePropertyBuilderWithSetter<T> {
@@ -13,8 +15,8 @@ public class MutablePropDelegatePropertyBuilderWithSetter<T> {
      * @param setter  the setter
      */
     public MutablePropDelegatePropertyBuilderWithSetter(
-            MutablePropDelegatePropertyBuilder<T> builder,
-            Function<T, T> setter
+            @NotNull MutablePropDelegatePropertyBuilder<T> builder,
+            @NotNull Function<T, T> setter
     ) {
         this.builder = builder;
         this.setter = setter;
