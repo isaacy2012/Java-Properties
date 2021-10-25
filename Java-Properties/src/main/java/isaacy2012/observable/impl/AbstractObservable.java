@@ -13,20 +13,13 @@ import java.util.function.Function;
  * The type Abstract observable.
  *
  * @param <T> the type parameter
+ * @param <P> the type parameter
  */
-public abstract class AbstractObservable<T> implements Observable<T> {
+public abstract class AbstractObservable<T, P extends Property<T>> implements Observable<T> {
     /**
-     * Apply an update
-     * @param mut the mutating function
-     * @param <R> the type parameter of the mutating function (e.g .pop()) on a stack
-     * @return the result from the mutation function
+     * The Prop.
      */
-    public abstract <R> R applyUpdate(@NotNull Function<T, R> mut);
-
-    /**
-     * Post update.
-     */
-    protected abstract void postUpdate();
+    protected final P prop;
 
     /**
      * The Listeners.
@@ -42,6 +35,42 @@ public abstract class AbstractObservable<T> implements Observable<T> {
         }
         return _observers;
     };
+
+    /**
+     * Instantiates a new Abstract observable.
+     *
+     * @param prop the prop
+     */
+    public AbstractObservable(@NotNull P prop) {
+        this.prop = prop;
+    }
+
+
+    @Override
+    public T get() {
+        return prop.get();
+    }
+
+    /**
+     * Post update.
+     */
+    protected void postUpdate() {
+        observers.get().forEach(it -> it.callback(this.prop.get()));
+    }
+
+    /**
+     * Mutate r.
+     *
+     * @param <R> the type parameter
+     * @param mut the mut
+     * @return the r
+     */
+    public <R> R applyUpdate(@NotNull Function<T, R> mut) {
+        R ret = mut.apply(this.prop.get());
+        postUpdate();
+        return ret;
+    }
+
 
     @Override
     public void observe(@NotNull Observer<T> observer) {

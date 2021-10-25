@@ -10,11 +10,7 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class ImmutableObservable<T> extends AbstractObservable<T> {
-    /**
-     * The Prop.
-     */
-    private final Property<T> prop;
+public class ImmutableObservable<T> extends AbstractObservable<T, Property<T>> {
 
     /**
      * Instantiates a new Immutable observable.
@@ -22,35 +18,7 @@ public class ImmutableObservable<T> extends AbstractObservable<T> {
      * @param prop the prop
      */
     public ImmutableObservable(@NotNull Property<T> prop) {
-        super();
-        this.prop = prop;
+        super(prop);
     }
-
-    @Override
-    public T get() {
-        return prop.get();
-    }
-
-    /**
-     * Post update.
-     */
-    @Override
-    protected void postUpdate() {
-        observers.get().forEach(it -> it.callback(this.prop.get()));
-    }
-
-    /**
-     * Mutate r.
-     *
-     * @param <R> the type parameter
-     * @param mut the mut
-     * @return the r
-     */
-    public <R> R applyUpdate(@NotNull Function<T, R> mut) {
-        R ret = mut.apply(this.prop.get());
-        postUpdate();
-        return ret;
-    }
-
 
 }
