@@ -1,3 +1,10 @@
+import isaacy2012.observer.Observable;
+import isaacy2012.observer.impl.MutableObservable;
+import isaacy2012.property.MutableProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     /**
      * The entry point of application.
@@ -5,10 +12,37 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+        listObservableDemo();
         carDemo();
         propCarDemo();
         ageDemo();
         personDemo();
+    }
+
+
+    private static void listObservableDemo() {
+        class Thing {
+            public MutableObservable<String> name = Observable.of(MutableProperty.ofEmpty());
+            public MutableObservable<List<Thing>> friends = Observable.of(MutableProperty.of(new ArrayList<>()));;
+
+            public Thing(String name) {
+                this.name.set(name);
+            }
+
+            public void addFriend(Thing friend) {
+                this.friends.applyUpdate((friends) -> friends.add(friend));
+            }
+
+            @Override
+            public String toString() {
+                return name.toString();
+            }
+        }
+
+        Thing adam = new Thing("Adam");
+        adam.friends.observe((it) -> System.out.println("Adam has a new friend: " + it));
+        Thing bob = new Thing("Bob");
+        adam.addFriend(bob);
     }
 
     private static void carDemo() {
