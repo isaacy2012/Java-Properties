@@ -13,6 +13,14 @@
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1zIthDggK9h0NiXVdzm9UjNYwRz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,15 +35,21 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.53272253" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="isaacy2012" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="isaacy2012.observer.impl" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Java-Properties">
+  <component name="RunManager" selected="JUnit.ObservableTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="12" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Demo" />
       <method v="2">
@@ -57,7 +71,11 @@
     </configuration>
     <configuration name="All in Java-Properties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Properties" />
-      <extension name="coverage" sample_coverage="false" runner="jacoco">
+      <extension name="coverage" sample_coverage="false">
+        <pattern>
+          <option name="PATTERN" value="isaacy2012.observer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
         <pattern>
           <option name="PATTERN" value="isaacy2012.property.*" />
           <option name="ENABLED" value="true" />
@@ -71,27 +89,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImmutablePropertyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java-Properties" />
-      <extension name="coverage" runner="jacoco">
-        <pattern>
-          <option name="PATTERN" value="isaacy2012.property.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImmutablePropertyTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MutablePropertyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Properties" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="isaacy2012.property.*" />
+          <option name="PATTERN" value="isaacy2012.observer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,6 +102,15 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MutablePropertyTest" />
       <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObservableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java-Properties" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ObservableTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,17 +143,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ImmutablePropertyTest" />
       <item itemvalue="JUnit.MutablePropertyTest" />
       <item itemvalue="JUnit.All in Java-Properties" />
+      <item itemvalue="JUnit.ObservableTest" />
       <item itemvalue="Maven.Java-Properties [Test]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Java-Properties" />
-        <item itemvalue="JUnit.MutablePropertyTest" />
-        <item itemvalue="JUnit.ImmutablePropertyTest" />
+        <item itemvalue="JUnit.ObservableTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MutablePropertyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -156,6 +167,8 @@
       <updated>1633847547331</updated>
       <workItem from="1633847548785" duration="269000" />
       <workItem from="1634451952952" duration="2568000" />
+      <workItem from="1634883308142" duration="4891000" />
+      <workItem from="1635127625641" duration="1403000" />
     </task>
     <servers />
   </component>
@@ -166,13 +179,16 @@
     <SUITE FILE_PATH="coverage/Java_Properties$MutablePropertyTest.ic" NAME="MutablePropertyTest Coverage Results" MODIFIED="1634452731547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>isaacy2012.property.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.exec" NAME="All in Java-Properties Coverage Results" MODIFIED="1634453943838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>isaacy2012.property.*</FILTER>
+    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.exec" NAME="All in Java-Properties Coverage Results" MODIFIED="1635128823940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>isaacy2012.observer.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.exec" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633849734551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>isaacy2012.property.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.ic" NAME="All in Java-Properties Coverage Results" MODIFIED="1635128856004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>isaacy2012.observer.*</FILTER>
+      <FILTER>isaacy2012.property.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.ic" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633848215419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.ic" NAME="All in Java-Properties Coverage Results" MODIFIED="1634453162339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
