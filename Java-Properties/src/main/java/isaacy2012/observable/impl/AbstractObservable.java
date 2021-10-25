@@ -18,7 +18,7 @@ public abstract class AbstractObservable<T> implements Observable<T> {
     /**
      * Apply an update
      * @param mut the mutating function
-     * @param <R> the type paramater of the mutating function (e.g .pop()) on a stack
+     * @param <R> the type parameter of the mutating function (e.g .pop()) on a stack
      * @return the result from the mutation function
      */
     public abstract <R> R applyUpdate(@NotNull Function<T, R> mut);

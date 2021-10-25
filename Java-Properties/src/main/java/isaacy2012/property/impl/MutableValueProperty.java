@@ -1,11 +1,13 @@
 package isaacy2012.property.impl;
 
+import com.sun.jdi.Value;
 import isaacy2012.property.MutableProperty;
+import isaacy2012.property.ValueProperty;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-public class MutableValueProperty<T> implements MutableProperty<T> {
+public class MutableValueProperty<T> implements MutableProperty<T>, ValueProperty<T> {
     private T value;
     private final Function<T, T> setter;
     private final Function<T, T> getter;
@@ -21,6 +23,11 @@ public class MutableValueProperty<T> implements MutableProperty<T> {
         this.value = value;
         this.getter = getter;
         this.setter = setter;
+    }
+
+    @Override
+    public void init(T value) {
+        set(value);
     }
 
     @Override
