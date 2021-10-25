@@ -1,7 +1,4 @@
-package isaacy2012.observer;
-
-import isaacy2012.observer.impl.MutableObservable;
-import isaacy2012.property.MutableProperty;
+package isaacy2012.observable;
 
 /**
  * The interface Observer.

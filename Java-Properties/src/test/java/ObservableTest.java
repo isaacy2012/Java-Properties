@@ -1,12 +1,11 @@
-import isaacy2012.observer.Observable;
-import isaacy2012.observer.impl.MutableObservable;
+import isaacy2012.observable.Observable;
+import isaacy2012.observable.impl.MutableObservable;
 import isaacy2012.property.MutableProperty;
 import isaacy2012.property.Property;
 import isaacy2012.property.ValueProperty;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

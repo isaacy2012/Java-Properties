@@ -1,5 +1,5 @@
-import isaacy2012.observer.Observable;
-import isaacy2012.observer.impl.MutableObservable;
+import isaacy2012.observable.Observable;
+import isaacy2012.observable.impl.MutableObservable;
 import isaacy2012.property.MutableProperty;
 
 import java.util.ArrayList;

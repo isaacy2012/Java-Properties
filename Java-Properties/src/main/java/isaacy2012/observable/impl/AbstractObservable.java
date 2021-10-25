@@ -1,7 +1,7 @@
-package isaacy2012.observer.impl;
+package isaacy2012.observable.impl;
 
-import isaacy2012.observer.Observable;
-import isaacy2012.observer.Observer;
+import isaacy2012.observable.Observable;
+import isaacy2012.observable.Observer;
 import isaacy2012.property.Property;
 import org.jetbrains.annotations.NotNull;
 
