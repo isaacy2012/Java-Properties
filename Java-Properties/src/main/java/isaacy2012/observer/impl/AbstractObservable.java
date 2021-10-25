@@ -3,6 +3,7 @@ package isaacy2012.observer.impl;
 import isaacy2012.observer.Observable;
 import isaacy2012.observer.Observer;
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +15,19 @@ import java.util.function.Function;
  * @param <T> the type parameter
  */
 public abstract class AbstractObservable<T> implements Observable<T> {
+    /**
+     * Apply an update
+     * @param mut the mutating function
+     * @param <R> the type paramater of the mutating function (e.g .pop()) on a stack
+     * @return the result from the mutation function
+     */
+    public abstract <R> R applyUpdate(@NotNull Function<T, R> mut);
+
+    /**
+     * Post update.
+     */
+    protected abstract void postUpdate();
+
     /**
      * The Listeners.
      */
@@ -29,15 +43,8 @@ public abstract class AbstractObservable<T> implements Observable<T> {
         return _observers;
     };
 
-    public abstract <R> R applyUpdate(Function<T, R> mut);
-
-    /**
-     * Post update.
-     */
-    protected abstract void postUpdate();
-
     @Override
-    public void observe(Observer<T> observer) {
+    public void observe(@NotNull Observer<T> observer) {
         observers.get().add(observer);
     }
 

@@ -35,7 +35,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.53272253" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="JavaDoc" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -168,7 +168,7 @@
       <workItem from="1633847548785" duration="269000" />
       <workItem from="1634451952952" duration="2568000" />
       <workItem from="1634883308142" duration="4891000" />
-      <workItem from="1635127625641" duration="1403000" />
+      <workItem from="1635127625641" duration="2171000" />
     </task>
     <servers />
   </component>

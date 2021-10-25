@@ -4,6 +4,7 @@ import isaacy2012.observer.Observable;
 import isaacy2012.observer.Observer;
 import isaacy2012.property.MutableProperty;
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +26,7 @@ public class MutableObservable<T> extends AbstractObservable<T> implements Mutab
      *
      * @param prop the prop
      */
-    public MutableObservable(MutableProperty<T> prop) {
+    public MutableObservable(@NotNull MutableProperty<T> prop) {
         this.prop = prop;
     }
 
@@ -49,7 +50,7 @@ public class MutableObservable<T> extends AbstractObservable<T> implements Mutab
      * @param mut the mut
      * @return the r
      */
-    public <R> R applyUpdate(Function<T, R> mut) {
+    public <R> R applyUpdate(@NotNull Function<T, R> mut) {
         R ret = mut.apply(this.prop.get());
         postUpdate();
         return ret;
@@ -62,7 +63,7 @@ public class MutableObservable<T> extends AbstractObservable<T> implements Mutab
     }
 
     @Override
-    public void observe(Observer<T> observer) {
+    public void observe(@NotNull Observer<T> observer) {
         observers.get().add(observer);
     }
 

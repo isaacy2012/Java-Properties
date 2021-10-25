@@ -4,6 +4,7 @@ import isaacy2012.observer.impl.ImmutableObservable;
 import isaacy2012.observer.impl.MutableObservable;
 import isaacy2012.property.MutableProperty;
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -19,7 +20,7 @@ public interface Observable<T> extends Property<T> {
      *
      * @param observer the observer
      */
-    void observe(Observer<T> observer);
+    void observe(@NotNull Observer<T> observer);
 
 
     /**
@@ -29,7 +30,7 @@ public interface Observable<T> extends Property<T> {
      * @param mut the mut
      * @return the r
      */
-    <R> R applyUpdate(Function<T, R> mut);
+    <R> R applyUpdate(@NotNull Function<T, R> mut);
 
     /**
      * Of mutable observable.
@@ -38,11 +39,11 @@ public interface Observable<T> extends Property<T> {
      * @param prop the prop
      * @return the mutable observable
      */
-    static <T> MutableObservable<T> of(MutableProperty<T> prop) {
+    static <T> MutableObservable<T> of(@NotNull MutableProperty<T> prop) {
         return new MutableObservable<T>(prop);
     }
 
-    static <T> Observable<T> of(Property<T> prop) {
+    static <T> Observable<T> of(@NotNull Property<T> prop) {
         return new ImmutableObservable<T>(prop);
     }
 }
