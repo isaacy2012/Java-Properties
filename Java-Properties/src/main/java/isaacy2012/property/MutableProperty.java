@@ -20,7 +20,7 @@ public interface MutableProperty<T> extends Property<T> {
      * @param value the value
      * @return the mutable property
      */
-    static <T> MutableProperty<T> of(T value) {
+    static <T> MutableValueProperty<T> of(T value) {
         return withValue(value).build();
     }
 
@@ -30,7 +30,7 @@ public interface MutableProperty<T> extends Property<T> {
      * @param <T> the type parameter
      * @return the property
      */
-    static <T> MutableProperty<T> ofEmpty() {
+    static <T> MutableValueProperty<T> ofEmpty() {
         return of(null);
     }
 

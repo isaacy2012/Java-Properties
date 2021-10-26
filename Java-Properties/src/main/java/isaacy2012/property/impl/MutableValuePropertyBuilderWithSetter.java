@@ -28,7 +28,7 @@ public class MutableValuePropertyBuilderWithSetter<T> {
      *
      * @return the mutable property
      */
-    public MutableProperty<T> build() {
+    public MutableValueProperty<T> build() {
         return new MutableValueProperty<>(
                 builder.value,
                 builder.getter,
