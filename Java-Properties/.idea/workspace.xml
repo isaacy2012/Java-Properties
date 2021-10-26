@@ -47,15 +47,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in Java-Properties">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="12" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Demo" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -63,6 +54,15 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="12" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Demo" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,6 +76,10 @@
         </pattern>
         <pattern>
           <option name="PATTERN" value="isaacy2012.property.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="isaacy2012.lazy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,6 +178,12 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.ic" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633848215419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.ic" NAME="All in Java-Properties Coverage Results" MODIFIED="1635247823973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>isaacy2012.observable.*</FILTER>
+      <FILTER>isaacy2012.property.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java_Properties$ObservableTest.ic" NAME="ObservableTest Coverage Results" MODIFIED="1635144746431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Java_Properties$MutablePropertyTest.ic" NAME="MutablePropertyTest Coverage Results" MODIFIED="1634452731547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>isaacy2012.property.*</FILTER>
     </SUITE>
@@ -183,7 +193,5 @@
     <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.exec" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633849734551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>isaacy2012.property.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Java_Properties$ImmutablePropertyTest.ic" NAME="ImmutablePropertyTest Coverage Results" MODIFIED="1633848215419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Java_Properties$All_in_Java_Properties.ic" NAME="All in Java-Properties Coverage Results" MODIFIED="1634453162339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
