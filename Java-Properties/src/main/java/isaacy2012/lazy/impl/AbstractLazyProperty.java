@@ -1,24 +1,31 @@
 package isaacy2012.lazy.impl;
 
 import isaacy2012.lazy.Lazy;
-import isaacy2012.property.Property;
 import isaacy2012.property.ValueProperty;
 
 import java.util.function.Supplier;
 
-public abstract class AbstractLazyProperty<T, K extends ValueProperty<T>> implements Lazy<T> {
-    K prop;
+public abstract class AbstractLazyProperty<T, P extends ValueProperty<T>> implements Lazy<T> {
+    P prop;
     Supplier<T> supplier;
+    private boolean initialized = false;
 
-    public AbstractLazyProperty(Supplier<T> supplier, K prop) {
+    /**
+     * Instantiates a new Abstract lazy property.
+     *
+     * @param supplier the supplier
+     * @param prop     the prop
+     */
+    public AbstractLazyProperty(P prop, Supplier<T> supplier) {
         this.prop = prop;
         this.supplier = supplier;
     }
 
     @Override
     public T get() {
-        if (prop.get() == null) {
+        if (!initialized) {
             prop.init(supplier.get());
+            initialized = true;
         }
         return prop.get();
     }
