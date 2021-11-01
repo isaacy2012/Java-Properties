@@ -1,6 +1,7 @@
 package isaacy2012.property.impl;
 
 import isaacy2012.property.Property;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -9,24 +10,14 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class PropDelegatePropertyBuilder<T> {
-    /**
-     * The Value.
-     */
-    Property<T> _property;
-
-    /**
-     * The Getter.
-     */
-    Function<T, T> getter;
-
+public class PropDelegatePropertyBuilder<T> extends AbstractPropDelegatePropertyBuilder<T, Property<T>> {
     /**
      * Instantiates a new Value property builder.
      *
      * @param prop the property
      */
     public PropDelegatePropertyBuilder(Property<T> prop) {
-        this._property = prop;
+        super(prop);
     }
 
     /**
@@ -35,7 +26,7 @@ public class PropDelegatePropertyBuilder<T> {
      * @param getter the getter
      * @return the value property builder
      */
-    public PropDelegatePropertyBuilder<T> withGetter(Function<T, T> getter) {
+    public PropDelegatePropertyBuilder<T> withGetter(@NotNull Function<T, T> getter) {
         this.getter = getter;
 
         return this;

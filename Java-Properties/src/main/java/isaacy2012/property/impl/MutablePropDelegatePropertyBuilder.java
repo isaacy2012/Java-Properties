@@ -10,16 +10,7 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class MutablePropDelegatePropertyBuilder<T> {
-    /**
-     * The Value.
-     */
-    MutableProperty<T> _property;
-
-    /**
-     * The Getter.
-     */
-    Function<T, T> getter;
+public class MutablePropDelegatePropertyBuilder<T> extends AbstractPropDelegatePropertyBuilder<T, MutableProperty<T>> {
     /**
      * The Setter.
      */
@@ -31,7 +22,7 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param prop the property
      */
     public MutablePropDelegatePropertyBuilder(MutableProperty<T> prop) {
-        this._property = prop;
+        super(prop);
     }
 
     /**
