@@ -3,6 +3,7 @@ import isaacy2012.property.Property;
 import isaacy2012.property.ValueProperty;
 import isaacy2012.property.exception.ValueAlreadyInitializedException;
 import isaacy2012.property.exception.ValueNotInitializedException;
+import isaacy2012.property.impl.MutableValueProperty;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -154,14 +155,14 @@ public class MutablePropertyTest {
     @Test
     void of_uninitialized_with_getter_and_setter() {
         class Student {
-            public final MutableProperty<String> name = MutableProperty.withEmpty((String) null)
+            public final MutableValueProperty<String> name = MutableProperty.withEmpty((String) null)
                     .withGetter(String::toUpperCase)
                     .withSetter((it) -> it.replace(" ", "-"))
                     .build();
         }
 
         Student student = new Student();
-        student.name.set("Adam Bob");
+        student.name.init("Adam Bob");
         assertEquals("ADAM-BOB", student.name.get());
         assertEquals("Adam-Bob -> ADAM-BOB", student.name.toString());
     }
@@ -172,7 +173,7 @@ public class MutablePropertyTest {
             public final MutableProperty<String> name = MutableProperty.withEmpty("Adam").build();
         }
 
-        Exception exception = assertThrows(RuntimeException.class, Student::new);
+        Exception exception = assertThrows(IllegalArgumentException.class, Student::new);
         assertEquals("withEmpty() must be called with a casted null!", exception.getMessage());
     }
 
