@@ -6,15 +6,15 @@ import isaacy2012.property.impl.ImmutableValueProperty;
 
 import java.util.function.Supplier;
 
-public class ImmutableLazyProperty<T> extends AbstractLazyProperty<T, ImmutableValueProperty<T>> {
+public class ImmutableLazyProperty<T> extends AbstractLazyProperty<T> {
+
     /**
      * Instantiates a new Immutable lazy property.
      *
      * @param supplier the supplier
-     * @param prop     the prop
      */
-    public ImmutableLazyProperty(ImmutableValueProperty<T> prop, Supplier<T> supplier) {
-        super(prop, supplier);
+    public ImmutableLazyProperty(Supplier<T> supplier) {
+        super(supplier);
     }
 
 }

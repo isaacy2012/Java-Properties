@@ -214,7 +214,7 @@ public class ImmutablePropertyTest {
             public final Property<String> name = Property.withEmpty("Adam").build();
         }
 
-        Exception exception = assertThrows(RuntimeException.class, Student::new);
+        Exception exception = assertThrows(IllegalArgumentException.class, Student::new);
         assertEquals("withEmpty() must be called with a casted null!", exception.getMessage());
     }
 

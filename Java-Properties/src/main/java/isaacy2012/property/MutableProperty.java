@@ -44,7 +44,7 @@ public interface MutableProperty<T> extends Property<T> {
      */
     static <T> MutableValuePropertyBuilder<T> withEmpty(T mustBeNull) {
         if (mustBeNull != null) {
-            throw new RuntimeException("withEmpty() must be called with a casted null!");
+            throw new IllegalArgumentException("withEmpty() must be called with a casted null!");
         }
         return withValue(null);
     }
