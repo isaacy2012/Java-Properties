@@ -20,6 +20,10 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * The Getter.
      */
     Function<T, T> getter;
+    /**
+     * The Setter.
+     */
+    Function<T, T> setter;
 
     /**
      * Instantiates a new Value property builder.
@@ -48,8 +52,10 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param setter the setter
      * @return the property
      */
-    public MutablePropDelegatePropertyBuilderWithSetter<T> withSetter(@NotNull Function<T, T> setter) {
-        return new MutablePropDelegatePropertyBuilderWithSetter<>(this, setter);
+    public MutablePropDelegatePropertyBuilder<T> withSetter(@NotNull Function<T, T> setter) {
+        this.setter = setter;
+
+        return this;
     }
 
     /**
@@ -58,6 +64,9 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @return the mutable prop delegate property
      */
     public MutablePropDelegateProperty<T> build() {
-        return withSetter(Function.identity()).build();
+        return new MutablePropDelegateProperty<>(_property,
+                getter != null ? getter : Function.identity(),
+                setter != null ? setter : Function.identity()
+        );
     }
 }

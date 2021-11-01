@@ -11,6 +11,10 @@ import java.util.function.Function;
  * @param <T> the type parameter
  */
 public class MutableValuePropertyBuilder<T> extends ValuePropertyBuilder<T> {
+    /**
+     * The Setter.
+     */
+    Function<T, T> setter;
 
     /**
      * Instantiates a new Mutable value property builder.
@@ -39,14 +43,17 @@ public class MutableValuePropertyBuilder<T> extends ValuePropertyBuilder<T> {
      * @param setter the setter
      * @return the mutable delegate property builder with setter
      */
-    public MutableValuePropertyBuilderWithSetter<T> withSetter(@NotNull Function<T, T> setter) {
-        return new MutableValuePropertyBuilderWithSetter<>(this, setter);
+    public MutableValuePropertyBuilder<T> withSetter(@NotNull Function<T, T> setter) {
+        this.setter = setter;
+
+        return this;
     }
 
     @Override
     public MutableValueProperty<T> build() {
         return new MutableValueProperty<>(value,
                 getter != null ? getter : Function.identity(),
-                Function.identity());
+                setter != null ? setter : Function.identity()
+        );
     }
 }
