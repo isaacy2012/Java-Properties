@@ -16,7 +16,7 @@ public class PropDelegatePropertyBuilder<T> extends AbstractPropDelegateProperty
      *
      * @param prop the property
      */
-    public PropDelegatePropertyBuilder(Property<T> prop) {
+    public PropDelegatePropertyBuilder(@NotNull Property<T> prop) {
         super(prop);
     }
 

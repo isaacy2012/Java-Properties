@@ -21,7 +21,7 @@ public class MutablePropDelegatePropertyBuilder<T> extends AbstractPropDelegateP
      *
      * @param prop the property
      */
-    public MutablePropDelegatePropertyBuilder(MutableProperty<T> prop) {
+    public MutablePropDelegatePropertyBuilder(@NotNull MutableProperty<T> prop) {
         super(prop);
     }
 

@@ -27,7 +27,7 @@ public abstract class AbstractPropDelegatePropertyBuilder<T, P extends Property<
      *
      * @param _property the property
      */
-    public AbstractPropDelegatePropertyBuilder(P _property) {
+    public AbstractPropDelegatePropertyBuilder(@NotNull P _property) {
         this._property = _property;
     }
 

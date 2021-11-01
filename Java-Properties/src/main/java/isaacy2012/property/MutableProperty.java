@@ -1,6 +1,7 @@
 package isaacy2012.property;
 
 import isaacy2012.property.impl.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -67,7 +68,7 @@ public interface MutableProperty<T> extends Property<T> {
      * @param prop the prop
      * @return the mutable property
      */
-    static <T> MutablePropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
+    static <T> MutablePropDelegateProperty<T> ofProperty(@NotNull MutableProperty<T> prop) {
         return new MutablePropDelegatePropertyBuilder<>(prop)
                 .build();
     }
@@ -79,7 +80,7 @@ public interface MutableProperty<T> extends Property<T> {
      * @param getter the getter
      * @return the delegate property builder
      */
-    static <T> MutableDelegatePropertyBuilder<T> withGetter(Supplier<T> getter) {
+    static <T> MutableDelegatePropertyBuilder<T> withGetter(@NotNull Supplier<T> getter) {
         return new MutableDelegatePropertyBuilder<>(getter);
     }
 
@@ -90,7 +91,7 @@ public interface MutableProperty<T> extends Property<T> {
      * @param prop the prop
      * @return the prop delegate property builder
      */
-    static <T> MutablePropDelegatePropertyBuilder<T> withProperty(MutableProperty<T> prop) {
+    static <T> MutablePropDelegatePropertyBuilder<T> withProperty(@NotNull MutableProperty<T> prop) {
         return new MutablePropDelegatePropertyBuilder<>(prop);
     }
 }
