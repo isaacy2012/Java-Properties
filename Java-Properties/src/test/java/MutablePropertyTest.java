@@ -137,6 +137,7 @@ public class MutablePropertyTest {
             public final MutableProperty<String> name = MutableProperty.ofProperty(_name);
             public final MutableProperty<String> uppercaseName = MutableProperty.withProperty(_name)
                     .withGetter(String::toUpperCase)
+                    .withSetter(String::toLowerCase)
                     .build();
         }
 
@@ -150,6 +151,8 @@ public class MutablePropertyTest {
         assertEquals("Bobby", student.name.toString());
         assertEquals("BOBBY", student.uppercaseName.get());
         assertEquals("Bobby -> BOBBY", student.uppercaseName.toString());
+        student.uppercaseName.set("CHARLIE");
+        assertEquals("charlie", student._name.get());
     }
 
     @Test

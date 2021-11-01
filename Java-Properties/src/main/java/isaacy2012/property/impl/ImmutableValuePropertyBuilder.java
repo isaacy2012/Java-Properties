@@ -7,7 +7,7 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class UninitializedValuePropertyBuilder<T> {
+public class ImmutableValuePropertyBuilder<T> {
     /**
      * The Value.
      */
@@ -24,7 +24,7 @@ public class UninitializedValuePropertyBuilder<T> {
      * @param getter the getter
      * @return the value property builder
      */
-    public UninitializedValuePropertyBuilder<T> withGetter(Function<T, T> getter) {
+    public ImmutableValuePropertyBuilder<T> withGetter(Function<T, T> getter) {
         this.getter = getter;
 
         return this;

@@ -10,16 +10,11 @@ import java.util.function.Function;
  *
  * @param <T> the type parameter
  */
-public class MutablePropDelegatePropertyBuilder<T> {
+public class MutablePropDelegatePropertyBuilder<T> extends AbstractPropDelegatePropertyBuilder<T, MutableProperty<T>> {
     /**
-     * The Value.
+     * The Setter.
      */
-    MutableProperty<T> _property;
-
-    /**
-     * The Getter.
-     */
-    Function<T, T> getter;
+    Function<T, T> setter;
 
     /**
      * Instantiates a new Value property builder.
@@ -27,7 +22,7 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param prop the property
      */
     public MutablePropDelegatePropertyBuilder(MutableProperty<T> prop) {
-        this._property = prop;
+        super(prop);
     }
 
     /**
@@ -48,8 +43,10 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @param setter the setter
      * @return the property
      */
-    public MutablePropDelegatePropertyBuilderWithSetter<T> withSetter(@NotNull Function<T, T> setter) {
-        return new MutablePropDelegatePropertyBuilderWithSetter<>(this, setter);
+    public MutablePropDelegatePropertyBuilder<T> withSetter(@NotNull Function<T, T> setter) {
+        this.setter = setter;
+
+        return this;
     }
 
     /**
@@ -58,6 +55,9 @@ public class MutablePropDelegatePropertyBuilder<T> {
      * @return the mutable prop delegate property
      */
     public MutablePropDelegateProperty<T> build() {
-        return withSetter(Function.identity()).build();
+        return new MutablePropDelegateProperty<>(_property,
+                getter != null ? getter : Function.identity(),
+                setter != null ? setter : Function.identity()
+        );
     }
 }

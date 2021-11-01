@@ -69,8 +69,6 @@ public interface MutableProperty<T> extends Property<T> {
      */
     static <T> MutablePropDelegateProperty<T> ofProperty(MutableProperty<T> prop) {
         return new MutablePropDelegatePropertyBuilder<>(prop)
-                .withGetter(Function.identity())
-                .withSetter(Function.identity())
                 .build();
     }
 
