@@ -43,7 +43,7 @@ public interface Property<T> {
      * @return the property
      */
     static <T> ImmutableValueProperty<T> ofEmpty() {
-        return new UninitializedValuePropertyBuilder<T>().build();
+        return new ImmutableValuePropertyBuilder<T>().build();
     }
 
     /**
@@ -54,11 +54,11 @@ public interface Property<T> {
      * @param mustBeNull the casted null, that informs the type parameter
      * @return the value property builder
      */
-    static <T> UninitializedValuePropertyBuilder<T> withEmpty(T mustBeNull) {
+    static <T> ImmutableValuePropertyBuilder<T> withEmpty(T mustBeNull) {
         if (mustBeNull != null) {
             throw new IllegalArgumentException("withEmpty() must be called with a casted null!");
         }
-        return new UninitializedValuePropertyBuilder<>();
+        return new ImmutableValuePropertyBuilder<>();
     }
 
     /**
