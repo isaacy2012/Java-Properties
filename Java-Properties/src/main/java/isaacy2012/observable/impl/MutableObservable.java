@@ -14,7 +14,7 @@ import java.util.function.Function;
 public class MutableObservable<T> extends AbstractObservable<T, MutableProperty<T>> implements MutableProperty<T> {
 
     /**
-     * Instantiates a new Immutable observable.
+     * Instantiates a new Mutable observable.
      *
      * @param prop the prop
      */
